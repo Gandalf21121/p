@@ -1,17 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiResponseModel } from '../model/Product';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MasterService {
 
-  apiUrl = 'https://freeapi.miniprojectideas.com/api/BigBasket/'
-  constructor(private http :HttpClient ) { }
+// filepath: c:\angular files\practice\2103\p\src\app\service\master.service.ts
+apiProductsUrl: string = 'https://cors-anywhere.herokuapp.com/https://freetestapi.com/api/v1/products';  
+apiImagesUrl:string = 'https://picsum.photos/v2/list?page=1&limit=50'
+  constructor(private http:HttpClient){
+  }
+  
+  getApiProducts():Observable<[]>{
+    return this.http.get<[]>(this.apiProductsUrl) 
+  }
 
-  getAllProducts():Observable<ApiResponseModel>{
-    return this.http.get<ApiResponseModel>(this.apiUrl + 'GetAllProducts')
+  getApiImages():Observable<[]>{
+    return this.http.get<[]>(this.apiImagesUrl)
   }
 }

@@ -2,3 +2,10 @@
     background-color: lightgrey;
 
 }
+.card-body{
+    height: 200px
+}
+
+.category-badge{
+    height: 100px;
+}

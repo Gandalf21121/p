@@ -1,20 +1,21 @@
-export interface ApiResponseModel{
-    message:string
-    result:boolean
-    data:any
-}
-
 export interface ApiProductItem{
-        productId: number
-        productSku: string
-        productName: string
-        productPrice: number
-        productShortName: string
-        productDescription: string
-        createdDate: string
-        deliveryTimeSpan: string
-        categoryId: number
-        productImageUrl: string
-        categoryName: string
+  
+        id: number
+        name: string
+        description: string
+        price: number
+        image: string
+        rating: number
+        brand: string
+        resolution: string
+        sensor: string
 }
       
+export interface Image {
+        id: string;
+        author: string;
+        width: number;
+        height: number;
+        url: string;
+        download_url: string;
+      }
